@@ -10,7 +10,7 @@ sudo pip install ansible
 
 # amending the /etc/ssh/sshd_config 'PasswordAuthentication yes' 
 # then re-started the service 'sudo systemctl restart sshd'
-sudo vi /etc/ssh/sshd_config
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 sudo systemctl restart sshd
 
 ```
