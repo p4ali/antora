@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/ansible/0.0.1/module.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="ansible" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="fundamental.html">Ansible Hands-on</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="fundamental.html">Fundamentals</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="inventory.html">Inventory</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="module.html">Module</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="playbook.html">Playbook</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="role.html">Role</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="inline-text-formatting.html">Basic Inline Text Formatting</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">Lists</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">lists/ordered-list.adoc</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#">lists/unordered-list.adoc</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Ansible Hands-on</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="fundamental.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="fundamental.html">Ansible Hands-on</a></li>
+    <li class="crumb"><a href="module.html">Module</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/hands_on_ansible/docs/modules/ROOT/pages/module.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_modules"><a class="anchor" href="#_modules"></a>Modules</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Types</div>
+<ul>
+<li>
+<p>core</p>
+</li>
+<li>
+<p>extra</p>
+</li>
+<li>
+<p>deprecated</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Categories:</div>
+<ul>
+<li>
+<p>manage servers</p>
+</li>
+<li>
+<p>Deploy configuration</p>
+</li>
+<li>
+<p>virtual env</p>
+</li>
+<li>
+<p>Manage db and tables</p>
+</li>
+<li>
+<p>deploy lb config</p>
+</li>
+<li>
+<p>more than <code>ansible-doc -l |wc -l</code> (2834) modules</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-doc -l
+ansible-doc ping
+ansible-doc -s</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_use_module"><a class="anchor" href="#_use_module"></a>Use Module</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible-doc yum
+ansible-doc service
+ansible webservers -i inventory_prod -m yum -a "name=httpd state=present" -b
+ansible webservers -i inventory_prod -m service -a "name=httpd enabled=yes state=started" -b
+ansible dbservers -i inventory_prod -m yum -a "name=mariadb-server state=present" -b
+ansible dbservers -i inventory_prod -m service -a "name=mariadb enabled=yes state=started" -b
+
+# using : for mulitple groups (or)
+ansible webservers:dbservers -i inventory_prod -m ping</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hostgrop_target_patterns"><a class="anchor" href="#_hostgrop_target_patterns"></a>Host/Grop Target Patterns</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>or - <code>g1:g2</code></p>
+</li>
+<li>
+<p>not - <code>!group</code></p>
+</li>
+<li>
+<p>wildcard - <code>web*.ex.com</code></p>
+</li>
+<li>
+<p>regex - <code>~web[0-9]+</code> - match web0-9</p>
+</li>
+<li>
+<p>and - <code>g1:&amp;g2</code> - intersection of g1 and g2</p>
+</li>
+<li>
+<p>complex - <code>webservers:&amp;prod:!python3</code> - hosts defined in webservers AND prod but NOT in python3 group</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setup_module"><a class="anchor" href="#_setup_module"></a>Setup module</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Also named the fact module. The <code>setup</code> module will return the facts on the remote machine.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ansible web1 -i inventory_prod -m setup -a "filter=ansible_eth*"
+ansible web1 -i inventory_prod -m setup --tree ./setup.json</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_folder_structure"><a class="anchor" href="#_folder_structure"></a>Folder structure</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>$ tree playbook
+playbook
+├── ansible.cfg    <i class="conum" data-value="1"></i><b>(1)</b>
+├── inventory      <i class="conum" data-value="2"></i><b>(2)</b>
+├── templates      <i class="conum" data-value="3"></i><b>(3)</b>
+│   ├── httpd.j2
+│   └── index.j2
+└── web_db.yaml    <i class="conum" data-value="4"></i><b>(4)</b></pre>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Where:</div>
+<ol class="arabic">
+<li>
+<p><code>ansible.cfg</code> should set <code>hostfile=inventory</code> under <code>[defaults]</code> section</p>
+</li>
+<li>
+<p><code>inventory</code> defines the hosts settings</p>
+</li>
+<li>
+<p><code>templates</code> contains jinja2 templates</p>
+</li>
+<li>
+<p><code>web-db.yaml</code> is the playbook - defines the host tasks mapping</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ssh_between_control_machine_and_remote_hosts"><a class="anchor" href="#_ssh_between_control_machine_and_remote_hosts"></a>ssh between control machine and remote hosts</h2>
+<div class="sectionbody">
+<div class="ulist">
+<div class="title">Use password</div>
+<ul>
+<li>
+<p>define ssh password in <code>inventory</code></p>
+</li>
+<li>
+<p>require sshpass, <a href="https://stackoverflow.com/questions/32255660/how-to-install-sshpass-on-mac">on mac</a>.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Use key/certs</div>
+<ul>
+<li>
+<p>predeploy ssh key pair,</p>
+</li>
+<li>
+<p>copy pub key to remote hosts <code>.ssh/authorized_keys</code>, and keep private key on control machine <code>.ssh/id_rsa</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>
