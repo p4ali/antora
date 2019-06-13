@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untitled :: Antora Site</title>
-    <link rel="canonical" href="https://p4ali.github.io/antora/ansible/0.0.1/service.html">
+    <link rel="canonical" href="https://p4ali.github.io/antora/numpy/0.0.1/environment.html">
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
@@ -54,44 +54,17 @@
 </header>
 
 <div class="main-wrapper">
-<div class="navigation-container" data-component="ansible" data-version="0.0.1">
+<div class="navigation-container" data-component="numpy" data-version="0.0.1">
   <aside class="navigation">
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="fundamental.html">Ansible Hands-on</a></h3>
+    <h3 class="title"><a href="environment.html">Numpy stack in python</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="fundamental.html">Fundamentals</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="inventory.html">Inventory</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="module.html">Module</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="playbook.html">Playbook</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="role.html">Role</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="inline-text-formatting.html">Basic Inline Text Formatting</a>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-toggle"></button>
-    <span class="nav-text">Lists</span>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#">lists/ordered-list.adoc</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#">lists/unordered-list.adoc</a>
-  </li>
-</ul>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="environment.html">Setup Environment</a>
   </li>
 </ul>
   </li>
@@ -100,23 +73,23 @@
 </div>
 <div class="navigation-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Ansible Hands-on</span>
+    <span class="title">Numpy stack in python</span>
     <span class="version">0.0.1</span>
   </div>
   <ul class="components">
-    <li class="component is-current">
+    <li class="component">
       <span class="title">Ansible Hands-on</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="fundamental.html">0.0.1</a>
+        <li class="version is-latest">
+          <a href="../../ansible/0.0.1/fundamental.html">0.0.1</a>
         </li>
       </ul>
     </li>
-    <li class="component">
+    <li class="component is-current">
       <span class="title">Numpy stack in python</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../numpy/0.0.1/environment.html">0.0.1</a>
+        <li class="version is-current is-latest">
+          <a href="environment.html">0.0.1</a>
         </li>
       </ul>
     </li>
@@ -128,19 +101,56 @@
   <main class="main">
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
-  <a href="../../numpy/0.0.1/environment.html" class="home-link"></a>
+  <a href="environment.html" class="home-link is-current"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="environment.html">Numpy stack in python</a></li>
+    <li class="crumb"><a href="environment.html">Setup Environment</a></li>
+  </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///workspaces/github/hands_on_ansible/docs/modules/ROOT/pages/service.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///workspaces/github/python/numpy/docs/modules/ROOT/pages/environment.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
+<div class="sect1">
+<h2 id="_venv"><a class="anchor" href="#_venv"></a><code>venv</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>python3.7 -m venv numpy
+pip install -U numpy scipy matplotlib pandas ipython</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You may need change <code>~/.pip/pip.conf</code> to set your proxy if necessary.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[global]
+index-url = https://repository.example.com/repository/pypi-proxy/simple/
+trusted-host = repository.example.com</pre>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_reference"><a class="anchor" href="#_reference"></a>Reference</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://fabianlee.org/2017/05/21/golang-running-a-go-binary-as-a-systemd-service-on-ubuntu-16-04/">convert go as services</a></p>
+<p><a href="https://www.google.com/search?safe=active&amp;ei=X3ICXbymEsnysQXGqKiABw&amp;q=pythonvenv+vs+virtualenv&amp;oq=pythonvenv+vs+virtualenv&amp;gs_l=psy-ab.3..0.4063.5491..6120&#8230;&#8203;0.0..0.183.1125.0j7&#8230;&#8203;&#8230;&#8203;0&#8230;&#8203;.1..gws-wiz&#8230;&#8203;&#8230;&#8203;.0i7i30.UMcfAvDGqKg">venv vs pipenv</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@krishnaregmi/pipenv-vs-virtualenv-vs-conda-environment-3dde3f6869ed">venv, pipenv vs conda</a></p>
 </li>
 </ul>
 </div>
