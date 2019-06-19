@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/mesh/0.0.1/envoy/envoy.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="mesh" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="envoy.html">Service Mesh</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../network.html">Network</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="envoy.html">Envoy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Service Mesh</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../ansible/0.0.1/fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Numpy stack in python</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../numpy/0.0.1/environment.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../network.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="envoy.html">Service Mesh</a></li>
+    <li class="crumb"><a href="envoy.html">Envoy</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/antora/mesh/modules/envoy/pages/envoy.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_envoy"><a class="anchor" href="#_envoy"></a>Envoy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Envoy is a newish network proxy in the same universe as HAProxy and nginx. It accept connnections from downstream client, and get response from upstream clusters.</p>
+</div>
+<div class="sect2">
+<h3 id="_listenters_and_filters"><a class="anchor" href="#_listenters_and_filters"></a>Listenters and Filters</h3>
+<div class="paragraph">
+<p>A listener is a named network location (e.g., port, unix domain socket, etc) that can accept connections from downstream clients.</p>
+</div>
+<div class="paragraph">
+<p>Envoy expose one or more listeners. Listener config can be declared statically in bootstrap config or dynamically via Lister Discovery Service (LDS)</p>
+</div>
+<div class="paragraph">
+<p>The listener has filters. Filters tell the listener what to do with the request it receives, only one successful listener will be executed based on the order.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">listeners:
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 80
+    filter_chains:
+    - filters:
+      - name: envoy.http_connection_manager
+        config:
+          codec_type: auto
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains:
+              - "*"
+              routes:
+              - match:
+                  prefix: "/service/1"
+                route:
+                  cluster: service1
+              - match:
+                  prefix: "/service/2"
+                route:
+                  cluster: service2
+          http_filters:
+          - name: envoy.router
+            config: {}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_virtual_host"><a class="anchor" href="#_virtual_host"></a>Virtual Host</h3>
+<div class="paragraph">
+<p>The top level element in routing configuration is a virtual host. Each vhost has a logical name as well as a set of domains that get routed to it based on the incoming request&#8217;s host header (host header will map to domains).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">virtual_hosts:
+  - name: backend
+    domains:
+    - "*"
+    routes:
+    - match:
+        prefix: "/service/1"
+      route:
+        cluster: service1
+    - match:
+        prefix: "/service/2"
+      route:
+        cluster: service2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clusters"><a class="anchor" href="#_clusters"></a>Clusters</h3>
+<div class="paragraph">
+<p>A cluster is a group of similar upstream hosts that accept traffic from Envoy. Cluster allow for load balancing of homogenous service sets. It can be configured via Cluster Discovery Service (CDS)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">clusters:
+  - name: service1
+      connect_timeout: 0.25s
+      type: strict_dns
+      lb_policy: round_robin
+      http2_protocol_options: {}
+      hosts:
+      - socket_address:
+          address: service1
+          port_value: 80
+  - name: service2
+      connect_timeout: 0.25s
+      type: strict_dns
+      lb_policy: round_robin
+      http2_protocol_options: {}
+      hosts:
+      - socket_address:
+          address: service2
+          port_value: 80</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_routing_basics"><a class="anchor" href="#_routing_basics"></a><a href="https://www.envoyproxy.io/learn/routing-basics">Routing basics</a></h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_front_or_edge_proxy"><a class="anchor" href="#_front_or_edge_proxy"></a>Front (or Edge) Proxy</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="_images/lyft_front_envoy.png" alt="Front proxy"></span></p>
+</div>
+<div class="paragraph">
+<p>Front proxy is the main entry of the services, it&#8217;s traditional gateway or load balancer in L7 (vs L4).</p>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

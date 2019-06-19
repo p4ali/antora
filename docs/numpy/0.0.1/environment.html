@@ -66,6 +66,9 @@
   <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="environment.html">Setup Environment</a>
   </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="numpy.html">Numpy</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -93,6 +96,14 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../mesh/0.0.1/envoy/envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
   </ul>
 </div>
     </div>
@@ -101,7 +112,7 @@
   <main class="main">
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
-  <a href="environment.html" class="home-link is-current"></a>
+  <a href="../../mesh/0.0.1/network.html" class="home-link"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="environment.html">Numpy stack in python</a></li>
@@ -116,8 +127,11 @@
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre>python3.7 -m venv numpy
-pip install -U numpy scipy matplotlib pandas ipython</pre>
+<pre>python3.7 -m venv numpy-env
+pip install -U numpy scipy matplotlib pandas ipython
+source numpy-env/bin/activate
+...
+deactivate</pre>
 </div>
 </div>
 <div class="admonitionblock note">

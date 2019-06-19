@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/mesh/0.0.1/network.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="mesh" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="envoy/envoy.html">Service Mesh</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="network.html">Network</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="envoy/envoy.html">Envoy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Service Mesh</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ansible/0.0.1/fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Numpy stack in python</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../numpy/0.0.1/environment.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="envoy/envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="network.html" class="home-link is-current"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="envoy/envoy.html">Service Mesh</a></li>
+    <li class="crumb"><a href="network.html">Network</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/antora/mesh/modules/ROOT/pages/network.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_tcp_packet"><a class="anchor" href="#_tcp_packet"></a>TCP packet</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="_images/tcp_packet.gif" alt="TCP packet"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Source Port</code> and <code>Destination Port</code> (16 bits each) ideify the end points of connection</p>
+</li>
+<li>
+<p>`Sequence Number (32 bits) specifies the initial seq number to be used in the upcomming transmission.</p>
+</li>
+<li>
+<p><code>Acknowledgement Number</code> (32 bits) the value of next seq number that the sender of the segment is expectin to receive, if the ACK control bit is set</p>
+</li>
+<li>
+<p><code>Data Offset (a.k.a., Header length)</code> tells how many 32-bit words are contained in the TCP header.</p>
+</li>
+<li>
+<p><code>Reserved</code> (6 bits) for future use</p>
+</li>
+<li>
+<p><code>Flags</code> (6 bits) contains various flags:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>URG - urgent data</p>
+</li>
+<li>
+<p>ACK - acknowledge data is received</p>
+</li>
+<li>
+<p>PSH - data should pass to app asap</p>
+</li>
+<li>
+<p>RST - Reset the connection</p>
+</li>
+<li>
+<p>SYN - synchronize sequence numbers to initiate a connection</p>
+</li>
+<li>
+<p>FIN - sender finished sending data</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Window</code> (16 bits) the size of the sender&#8217;s receive window, i.e., the buffer size for incoming data</p>
+</li>
+<li>
+<p><code>Checksum</code> (16 bits) checksum to verify whether header is damaged in transit</p>
+</li>
+<li>
+<p><code>Urgent Pointer</code> (16 bits) points to the first urgent data byte in the packet</p>
+</li>
+<li>
+<p><code>Options</code> (variable length) specifies various TCP options</p>
+</li>
+<li>
+<p><code>Data</code> (variable length) contains uper-layer info</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reserved_private_networks"><a class="anchor" href="#_reserved_private_networks"></a>Reserved private networks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The organization that distribute IP addresses to the world reserves a range of IP address for private networks.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>192.168.0.0 - 192.168.255.255 (65,536 IP addresses 2^16)</p>
+</li>
+<li>
+<p>172.16.0.0 - 172.31.255.255 (1,048,576 IP addresses 2^20)</p>
+</li>
+<li>
+<p>10.0.0.0 - 10.255.255.255 (16,777,216 IP addresses 2^24)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_l4_l7_network_service_definition"><a class="anchor" href="#_l4_l7_network_service_definition"></a>L4-L7 network service definition</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>L1 - the physical layer represent the electrical and phisical representation of the system. include cable type, pin layout, radio frequency etc.</p>
+</li>
+<li>
+<p>L2 - the data link layer is for node-to-node data transfer directly, and handle error correction from the physical layer. protocol e.g., MAC, LLC</p>
+</li>
+<li>
+<p>L3 - the network layer is for packet forwarding, including routing through different routers. protocol e.g. ip</p>
+</li>
+<li>
+<p>L4 - the transport layer is for transmission of data between points on a network. protocol e.g., tcp/udp</p>
+</li>
+<li>
+<p>L5 - the session layer is for managing the dialogues between computers. L5 establishes and manages connections between applications. And gracefully close sessions. protocol e.g., rpc</p>
+</li>
+<li>
+<p>L6 - the presentation layer is responsible for establishing context within the applications, in which different syntax ans semantics are present. Thsi layer provides mapping and communication to various applications. protocol e.g. SSL/TLS</p>
+</li>
+<li>
+<p>L7 - the application layer is nearest to the end user. The user and the application are directly interacting, communicating with both. protocol e.g., HTTP/SIP</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/l4-l7-network-services.png" alt="osi model layers"></span>s</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_network_address_translation_nat"><a class="anchor" href="#_network_address_translation_nat"></a>Network Address Translation <a href="https://www.geeksforgeeks.org/computer-network-network-address-translation-nat/">(NAT)</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="image"><img src="_images/nat.png" alt="Private/Public network and NAT"></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Each NAT handle translation between indide and outside addresses</p>
+</li>
+<li>
+<p>NAT is a process in which your router changes your private ip (inside) to public ip (outside), so that it can send to internet</p>
+</li>
+<li>
+<p>when packet come back, it reverse the change - from public ip to private ip, and then forward the traffic back to your computer</p>
+</li>
+<li>
+<p>In both direction, NAT rewrite the IP header of the packet.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/nat_header_mask.gif" alt="TCP/IP header altered by NATs"></span></p>
+</div>
+<div class="ulist">
+<div class="title">There are 2 type of NATs:</div>
+<ul>
+<li>
+<p>Network Address Translation (NAT) <span class="image"><img src="_images/nat_static.gif" alt="NAT traversal"></span></p>
+</li>
+<li>
+<p>Network PORT Address translation (NAPT) <span class="image"><img src="_images/nat_port.gif" alt="NAPT traversal"></span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">Why mask port numbers?</div>
+<p>Suppose, in a network, two hosts A and B are connected. Now, both of them request for the same destination, on the same port number, say 1000, on host side, at the same time. If NAT does only translation of ip addresses, then when their packets will arrive at the NAT, both of their IP addresses would be masked by the public IP address of the network and sent to the destination. Destination will send replies on the public ip address of the router. Thus, on receiving reply, it will be unclear to NAT as to which reply belongs to which host (because source port numbers for both A and B are same). Hence, to avoid such a problem, NAT masks the source port number as well and makes an entry in the NAT table (port 3000).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference"><a class="anchor" href="#_reference"></a>Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.networkworld.com/article/3239677/the-osi-model-explained-how-to-understand-and-remember-the-7-layer-network-model.html">osi model</a></p>
+</li>
+<li>
+<p><a href="https://www.cisco.com/c/en/us/about/press/internet-protocol-journal/back-issues/table-contents-29/anatomy.html">NAT explained</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>
