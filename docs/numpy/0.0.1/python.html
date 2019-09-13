@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/numpy/0.0.1/python.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="numpy" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="environment.html">Numpy stack in python</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="algo.html">Algorithm</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="python.html">Python Basic</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="environment.html">Setup Environment</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="numpy.html">Numpy</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Numpy stack in python</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ansible/0.0.1/fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Numpy stack in python</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="environment.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../mesh/0.0.1/envoy/envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../mesh/0.0.1/network.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="environment.html">Numpy stack in python</a></li>
+    <li class="crumb"><a href="python.html">Python Basic</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/python/numpy/docs/modules/ROOT/pages/python.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_package_module_distribution"><a class="anchor" href="#_package_module_distribution"></a>package, module distribution</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Package - A folder that contains <code><em>init</em>.py</code> file</p>
+</li>
+<li>
+<p>Module - A python file with <code>.py</code> extension</p>
+</li>
+<li>
+<p>Distribution - How one package relates to other packages and modules</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">To install a package named <code>foo</code>:</div>
+<div class="content">
+<pre>$ git clone https://github.com/user/foo
+$ cd foo
+$ python3.7 setup.py install</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">To use it without install <code>foo</code>:</div>
+<div class="content">
+<pre># this will create symlinks to the source dir within site-packages instead of copying things
+$ python3.7 setup.py develop</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">To find help:</div>
+<div class="content">
+<pre>$ python setup.py --help-commands</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_python_module"><a class="anchor" href="#_python_module"></a>Python module</h3>
+<div class="ulist">
+<div class="title">There are three different ways to define in Python:</div>
+<ul>
+<li>
+<p>A module can be written in Python itself</p>
+</li>
+<li>
+<p>A module can be written in <code>C</code> and loaded dynamically at runtime, like the <code>re</code>(regular expression) module</p>
+</li>
+<li>
+<p>A <code>built-in</code> module is intrinsically contained in the interpreter, like the <code>itertools module</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To write a module in Python is extremely straightforward - put it into a .py file</p>
+</div>
+<div class="listingblock">
+<div class="title">mymod.py</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">s="hello world"
+a=[1, 2, 3]
+
+def foo(arg):
+  print(f'arg={arg}')
+
+class Foo:
+  pass</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Several objects are defined in <code>mymod.py</code>:
+* <code>s</code> (a string)
+* <code>a</code> (a list)
+* <code>foo</code> (a function)
+* <code>Foo</code> (a class)</p>
+</div>
+<div class="paragraph">
+<p>Assuming mymod.py is in a appropriate location (see next section), these objects can be accessed by <code>importing</code> the module as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt;&gt;&gt; import mymod
+&gt;&gt;&gt; print(mymod.s)
+&gt;&gt;&gt; mymod.a
+&gt;&gt;&gt; mymod.foo(['a', 'red', 'fox'])
+&gt;&gt;&gt; x=mymod.Foo()</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_module_search_path"><a class="anchor" href="#_the_module_search_path"></a><a href="https://realpython.com/python-modules-packages/#the-module-search-path">The module search path</a></h3>
+<div class="listingblock">
+<div class="title">For statement:</div>
+<div class="content">
+<pre>import mymod</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The interpreter will search:
+* <code>The directory from which the input script was run</code> or the <code>current directory</code> if the interpreter is beding run interactively
+* the list of directories containe in the <code>PYTHONPATH</code> environment variable, if it is set. (The format for <code>PYTHONPATH</code> is similar to <code>PATH</code>)
+* An installation-dependent list of directories configured at the time Python is installed</p>
+</div>
+<div class="paragraph">
+<p>The <code>sys.path</code> variable contains above list, and can be accessed by:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">&gt;&gt;&gt; import sys
+&gt;&gt;&gt; sys.path
+['', '/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python37.zip', '/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7', '/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload', '/workspaces/github/python/venvs/numpy/lib/python3.7/site-packages', '/workspaces/github/python/venvs/numpy/src/requests']
+
+&gt;&gt;&gt; sys.path.append(r'/home/me/python/')</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>assuming <code>/home/me/python/mymod.py</code> is your module file.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_virtual_environment_and_packages"><a class="anchor" href="#_virtual_environment_and_packages"></a>Virtual environment and packages</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">To create <a href="https://docs.python.org/3/tutorial/venv.html">virutal env</a></div>
+<div class="content">
+<pre># this will create myenv folder if not exist, inside which containing a copy of Python interpreter, standard library, and various support files
+$ python3 -m venv myenv
+
+# to activate the myenv
+$ source myenv/bin/activate
+# and python will symlinked to real python interpreter, i.e., python3.7
+$ python --version</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Use <code>pip</code> to install, upgrade, and remove packages</div>
+<div class="content">
+<pre>$ pip search astronomy
+$ pip install requests==2.6.0
+$ pip install --upgrade request
+$ pip show requests
+$ pip remove astroobs
+$ pip freeze &gt; requirements.txt</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_python_modules_and_packages_an_introduction"><a class="anchor" href="#_python_modules_and_packages_an_introduction"></a><a href="https://realpython.com/python-modules-packages/">Python Modules and Packages – An Introduction</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_python_application_layouts_a_reference"><a class="anchor" href="#_python_application_layouts_a_reference"></a><a href="https://realpython.com/python-application-layouts/">Python Application Layouts: A Reference</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_print"><a class="anchor" href="#_print"></a><a href="https://www.runoob.com/w3cnote/python3-print-func-b.html"><code>print</code></a></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># print variable
+print("hi")
+L=[1,2,'a']
+print(L)
+M={'a':1, 'b':2}
+print(M)
+
+# print with format
+str="the length of (%s) is %d" %('foo', len('foo'))
+print(str)
+
+# floating point format
+pi = 3.141592653
+print('%10.3f' % pi) #字段宽10，精度3, 3.142
+
+# new line, by default, each print auto add new line, 0\n1\2...
+for i in range(0,6):
+  print(i)
+
+# if you do not want new line: 0 1 2 3 4 5 6
+for i in range(0,6):
+  print(i, end=' ')</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Also <a href="https://www.python-course.eu/python3_formatted_output.php">string format</a>, e.g.</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">&gt;&gt;&gt; "Second argument: {1}, first one: {0:5d}".format(47,11)
+'Second argument: 11, first one:    47'</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference"><a class="anchor" href="#_reference"></a>Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://stackoverflow.com/questions/1471994/what-is-setup-py">What is setup.py</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>
