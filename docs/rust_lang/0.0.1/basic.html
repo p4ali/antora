@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/rust_lang/0.0.1/basic.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="rust_lang" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-explore is-active" data-panel="explore">
+  <div class="context">
+    <span class="title">Rust Language</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ansible/0.0.1/fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Numpy stack in python</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../numpy/0.0.1/environment.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Rust Language</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="basic.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../mesh/0.0.1/envoy/envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../mesh/0.0.1/network.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/rust/rust_lang/docs/modules/ROOT/pages/basic.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_use_cargo"><a class="anchor" href="#_use_cargo"></a>Use <code>cargo</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bashs hljs" data-lang="bashs"># create a new project.
+$ cargo new rust_lang
+
+# run
+$ cd rust_lang &amp;&amp; cargo run</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lang_basics"><a class="anchor" href="#_lang_basics"></a>Lang basics</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>refer to the <a href="https://github.com/p4ali/rust_lang/blob/master/src/main.rs">main.rs</a> and <a href="https://github.com/p4ali/rust_lang/blob/master/src/pm.rs">pm.rs</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_module"><a class="anchor" href="#_module"></a>Module</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rest provide module system to hierachicallt split code into logical units (module), and manage the visibility (pub/private) between them.</p>
+</div>
+<div class="paragraph">
+<p>A module is a collection of: functions, structs, traits, <code>impl</code> blocks and even other modules.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rust hljs" data-lang="rust">// A module named `my_mod`
+mod my_mod {
+    // Items in modules default to private visibility.
+    fn private_function() {
+        println!("called `my_mod::private_function()`");
+    }
+
+    // Use the `pub` modifier to override default visibility.
+    pub fn function() {
+        println!("called `my_mod::function()`");
+    }
+
+    // Items can access other items in the same module,
+    // even when private.
+    pub fn indirect_access() {
+        print!("called `my_mod::indirect_access()`, that\n&gt; ");
+        private_function();
+    }
+
+    // Modules can also be nested
+    pub mod nested {
+        pub fn function() {
+            println!("called `my_mod::nested::function()`");
+        }
+    }
+}
+
+fn main() {
+    // Modules allow disambiguation between items that have the same name.
+    function();
+    my_mod::function();
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_consume_crates"><a class="anchor" href="#_consume_crates"></a>Consume Crates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>3rd party&#8217;s modules are normally published to <a href="https://crates.io">Crates</a>, and your own module can also colocate with your source code (locally in folders).</p>
+</div>
+<div class="paragraph">
+<p>To consume 3rd party&#8217;s module, add it under the <code>depdencies</code> section of <code>Cargo.toml</code>, and use <code>extern crate module_name</code> in your source code:</p>
+</div>
+<div class="listingblock">
+<div class="title">Cargo.toml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-toml hljs" data-lang="toml">...
+
+[dependencies]
+rand = "0.7.1"
+my_mod = {path = "../mymod"}  # my module in local folder</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">main.rs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rust hljs" data-lang="rust">extern crate rand;
+use rand::Rng;
+extern crate my_mod;
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    let b:bool = rng.gen();
+    println!("random boolean is {}", b);
+    my_mod::function();
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build_modules_and_crates"><a class="anchor" href="#_build_modules_and_crates"></a>Build modules and Crates</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>tree mymod
+|- Cargo.toml
+|_ src
+   |_ lib.rs</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run <code>cargo publish</code> to publish the mod to crates.io</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing"><a class="anchor" href="#_testing"></a>Testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Rust has build in support for unitest, to run the test: <code>cargo test</code>.</p>
+</div>
+<div class="paragraph">
+<p>The test can be either embeded in the source code, or in a separate module.</p>
+</div>
+<div class="paragraph">
+<p>To label a test,</p>
+</div>
+<div class="listingblock">
+<div class="title">lib.rs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rust hljs" data-lang="rust">pub mod greetings {
+    pub mod english;
+}
+
+#[test]
+#[should_panic]
+#[ignore]
+fn english_greeting_correct() {
+    assert_eq!("hellos", greetings::english::hello());
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comments_and_documentation"><a class="anchor" href="#_comments_and_documentation"></a>Comments and Documentation</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">english.rs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-rust hljs" data-lang="rust">// single line comment
+/*
+multi-line comment
+*/
+
+//! This module conains English.phrases
+//!
+//! Examples
+//! ```
+//! let user="abc"
+//! println(phrase::greetings::english::hello(), user);
+//! ```
+//!
+
+/// Applies to code that follow it
+/// In this case, it's the hello() function
+pub fn hello() -&gt; String {"hello".to_string()}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>then run the <code>rustdoc english.rs</code>, and it will create a <code>doc</code> folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references"><a class="anchor" href="#_references"></a>References</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://doc.rust-lang.org/book/title-page.html">The Rust Programming Language</a></p>
+</li>
+<li>
+<p><a href="https://rust-unofficial.github.io/too-many-lists/">Learn Rust With Entirely Too Many Linked Lists</a></p>
+</li>
+<li>
+<p><a href="https://doc.rust-lang.org/rust-by-example/std/hash.html">Rust by example - hashmap</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

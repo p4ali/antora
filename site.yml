@@ -13,6 +13,9 @@ content:
   - url: ../../python/numpy
     branches: [master]
     start_path: docs
+  - url: ../../rust/rust_lang
+    branches: [master]
+    start_path: docs
   - url: ../mesh
     branches: [master]
 ui:
