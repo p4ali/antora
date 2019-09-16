@@ -233,11 +233,19 @@ class Foo:
 <pre>import mymod</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>The interpreter will search:
-* <code>The directory from which the input script was run</code> or the <code>current directory</code> if the interpreter is beding run interactively
-* the list of directories containe in the <code>PYTHONPATH</code> environment variable, if it is set. (The format for <code>PYTHONPATH</code> is similar to <code>PATH</code>)
-* An installation-dependent list of directories configured at the time Python is installed</p>
+<div class="ulist">
+<div class="title">The interpreter will search:</div>
+<ul>
+<li>
+<p><code>The directory from which the input script was run</code> or the <code>current directory</code> if the interpreter is beding run interactively</p>
+</li>
+<li>
+<p>The list of directories containe in the <code>PYTHONPATH</code> environment variable, if it is set. (The format for <code>PYTHONPATH</code> is similar to <code>PATH</code>)</p>
+</li>
+<li>
+<p>An installation-dependent list of directories configured at the time Python is installed</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>The <code>sys.path</code> variable contains above list, and can be accessed by:</p>
