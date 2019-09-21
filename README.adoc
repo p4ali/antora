@@ -2,3 +2,6 @@
 
 The site is published : https://p4ali.github.io/antora/
 
+== Reference
+* https://docs-as-co.de/news/multi-repo-arc42-antora-part1/[Muti repository architecture documentation with Antora and ARC42]
+
