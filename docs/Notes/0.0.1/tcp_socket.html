@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/Notes/0.0.1/tcp_socket.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="Notes" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="golang_basic.html">Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="golang_basic.html">Golang Basic</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Notes</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ansible/0.0.1/fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Notes</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="golang_basic.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Numpy stack in python</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../numpy/0.0.1/environment.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rust Language</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../rust_lang/0.0.1/basic.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../mesh/0.0.1/envoy/envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../mesh/0.0.1/network.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/antora/antora_doc/modules/ROOT/pages/tcp_socket.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_port_vs_socket"><a class="anchor" href="#_port_vs_socket"></a>Port vs Socket</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">A simple service request flow:</div>
+<ol class="arabic">
+<li>
+<p>server create scoket on start</p>
+</li>
+<li>
+<p>bind <code>socket</code> and <code>port</code></p>
+</li>
+<li>
+<p>server start listening</p>
+</li>
+<li>
+<p>client connect to the <code>port</code></p>
+</li>
+<li>
+<p>server accept client request, and create a new <code>socket</code> for further communication with the client.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Port has multiple meanings in network: hub, switcher and router&#8217;s port is for others to connect, e.g., rj-45, serial port etc.
+Here the <code>port</code> means the port in TCP/IP protocol, which logical port.</p>
+</div>
+<div class="paragraph">
+<p>If think IP address as a house, then <code>port</code> is the door enter the house. The real house has only onw or two doors, but an IP address can have 65535 ports.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>port 0 is reserved</p>
+</li>
+<li>
+<p>port 1-1024 is preassigned for certain services, e.g., 80 for http, 22 for ssh, 23 for telnet, 21 for ftp</p>
+</li>
+<li>
+<p>port 1025-49151 is register port, you can use</p>
+</li>
+<li>
+<p>port 49152-65535 is used for socket - a <code>socket</code> is a binding between client, server and port.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tcpdump_and_wireshark"><a class="anchor" href="#_tcpdump_and_wireshark"></a><code>tcpdump</code> and <code>wireshark</code></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_tcpdump_syntax"><a class="anchor" href="#_tcpdump_syntax"></a><code>tcpdump</code> syntax:</h3>
+<div class="paragraph">
+<p><code>tcpdump  -i lo -w x.cap expression</code>, where expression is logical expression.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>// capture 192.168.1.123 packets
+tcpdump -i eth1 host 192.168.1.123 -w /tmp/xxx.cap
+
+// capture 192.168.1.123 port 80 packets
+tcpdump -i eth1 host 192.168.1.123 and port 80 -w /tmp/xxx.cap
+
+// capture 192.168.1.123 except port 80 and 110, 25
+tcpdump -i eth1 host 192.168.1.123 and ! port 80 and ! port 25 and ! port 110 -w /tmp/xxx.cap
+
+// capture 192.168.1.123 icmp packet
+tcpdump -i eth1 host 192.168.1.123 and icmp -w /tmp/xxx.cap</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wireshark_filter_options"><a class="anchor" href="#_wireshark_filter_options"></a><code>wireshark</code> filter options</h3>
+<div class="paragraph">
+<p>Wireshark accept Filter for better analysis:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>tcp.port== 80 // show only port 80 tcp data
+udp.port== 12345 // show port 12345 UDP data
+ip.src== 192.168.0.1 // show packets from source of 192.168.0.1
+ip.dst== 192.168.0.1 // show packets to destination of 192.168.0.1
+
+// Above filter can combined with `and` and `or`
+tcp.port== 80 and ip.src == 192.168.0.1 // show packets from port 80, source of 192.168.0.1
+udp.port== 12345 or ip.dst == 192.168.0.1 // show UDP packets from port 12345 UDP，or destination IP of 192.168.0.1</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tcp_flag"><a class="anchor" href="#_tcp_flag"></a>TCP flag</h3>
+<div class="paragraph">
+<p>TCP is host to host transportation protocol, it take 3 time handshake to create a connection:</p>
+</div>
+<div class="ulist">
+<div class="title">The flag bit has 6 type:</div>
+<ul>
+<li>
+<p>SYN(synchronous to create connect)</p>
+</li>
+<li>
+<p>ACK(acknowledgement)</p>
+</li>
+<li>
+<p>PSH(push to transport a non-empty data packet)</p>
+</li>
+<li>
+<p>FIN(finish)</p>
+</li>
+<li>
+<p>RST(reset)</p>
+</li>
+<li>
+<p>URG(urgent)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, Sequence number and Acknowledge number also involved in the handshake.</p>
+</div>
+<div class="ulist">
+<div class="title">To establish connection:</div>
+<ul>
+<li>
+<p>First handshake: host A send SYN=1, random generate a packet with seq_number=0 to service B. Host B knows host A want to connect because SYN=1. A in SYN_SEND status</p>
+</li>
+<li>
+<p>Second handshake: on receive host A&#8217;s packet, host B send to host A a packet, with ack_number=(host A&#8217;s seq_number+1, i.e., 1), SYN=1, ACK=1, and random generate seq=0. B in SYN_RECEIVE status</p>
+</li>
+<li>
+<p>Third handshake: on receive host B&#8217;s packet, host A verify B&#8217;s ack_number correct (0+1=1), and ACK=1, if correct, then host A resend ack_number=(host B&#8217;s seq_number+1, i.e., 0+1=1), ACK=1</p>
+</li>
+<li>
+<p>On receive A&#8217;s packet, host B verify the ack_number (0+1=1) and ACK=1, then connect success (ESTABLISHED). And start communication.</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">To disconnect:</div>
+<ul>
+<li>
+<p>First bye: host A set FIN=1, ACK=1, generate a packet with current seq_number+1, and send to host B.</p>
+</li>
+<li>
+<p>Second bye: on receive host A&#8217;s packet, host B send host a packet, where ack_number=(host A&#8217;s seq_number+1), FIN=1, ACK=1, and SAME seq_number as last packet</p>
+</li>
+<li>
+<p>Third bye: on receive host B&#8217;s packet, host A verify the ack_number, increase seq_number, and ack_number, ACK=1 and send B a packet.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference"><a class="anchor" href="#_reference"></a>Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/z15732621582/article/details/79603565">Socket connection mode and port</a></p>
+</li>
+<li>
+<p><a href="https://coolshell.cn/articles/11564.html">TCP thing</a></p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/JenningsMao/p/9487252.html">Sequence number and SYN ACK</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

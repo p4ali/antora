@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled :: Antora Site</title>
+    <link rel="canonical" href="https://p4ali.github.io/antora/Notes/0.0.1/golang_basic.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <a href="#">Developer Notes</a>
+        <span class="separator">//</span>
+        <a href="https://p4ali.github.io/antora">Docs</a>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+<!--
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Projects</div>
+          <div class="navbar-dropdown">
+            <div class="navbar-item"><strong>Core</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <div class="navbar-item"><strong>Default UI</strong></div>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default">Repository</a>
+            <a class="navbar-item" href="https://gitlab.com/antora/antora-ui-default/issues">Issue Tracker</a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://gitlab.com/antora/antora/blob/master/contributing.adoc">Contributing</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-link">Community</div>
+          <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="https://gitter.im/antora/users">Chat (Users)</a>
+            <a class="navbar-item" href="https://gitter.im/antora/dev">Chat (Dev)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </nav>
+</header>
+
+<div class="main-wrapper">
+<div class="navigation-container" data-component="Notes" data-version="0.0.1">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="golang_basic.html">Notes</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="golang_basic.html">Golang Basic</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Notes</span>
+    <span class="version">0.0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">Ansible Hands-on</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../ansible/0.0.1/fundamental.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Notes</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="golang_basic.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Numpy stack in python</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../numpy/0.0.1/environment.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Rust Language</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../rust_lang/0.0.1/basic.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Service Mesh</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../mesh/0.0.1/envoy/envoy.html">0.0.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../mesh/0.0.1/network.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="golang_basic.html">Notes</a></li>
+    <li class="crumb"><a href="golang_basic.html">Golang Basic</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///workspaces/github/antora/antora_doc/modules/ROOT/pages/golang_basic.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<div class="sect1">
+<h2 id="_data_type"><a class="anchor" href="#_data_type"></a>Data type</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boolean, <code>true</code> or <code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int, int8, int16, int32, int64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unint, uint8, uint16, unit32, unit64</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">unsigned integer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uintptr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pointer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float32,float64</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">complex64,complex128</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e.g., value=2+3i</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<code>uint</code> is used for pointer
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_define_value"><a class="anchor" href="#_define_value"></a>Define value</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>// format
+const|var name type = value
+// or omit the type
+name := value
+
+// constant
+const a int=1</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operator"><a class="anchor" href="#_operator"></a>Operator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>&amp;</code> - variable address
+<code>*</code> - pointer variables
+<code>_</code> - blank var, can be assigned to any value. Normally can be used to assign any discarding values. It&#8217;s an write-only var.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_uppercase_means_public"><a class="anchor" href="#_uppercase_means_public"></a>Uppercase means public</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In go package, the uppercase var or funcs are public, and lower case is private which can not be accessed by other package.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_keyword"><a class="anchor" href="#_keyword"></a>Keyword</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">where the code lives</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">import</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">import dependency package, can NOT import unused package</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">main</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">main entry, only live in Main pacakge per app. No return value, parameters in os.Args</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">func</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">function declaration</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">go</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start coroutine, i.e., goroutine</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dictionary, e.g., map[string]bool</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used only to delete the key/value pair from map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">channel, the core of coroutine communication</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read multiple channels data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">close</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">close channel</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">make</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">used to create chan or map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type definition, can define any type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">struct</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">same to c struct data structure, but can define method to achieve class similar behavior</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">define interface</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">new</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a new object and return the pointer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">range</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">similar to python range, work with <code>for</code> to traverse list, array or map elements</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">defer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">auto release resource, execute on function exit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error interface, the only method is Error()string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">panic</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throw exception, exit if not captured by recover</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">recover</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">capture panic</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment"><a class="anchor" href="#_comment"></a>Comment</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>// This is a line comment
+
+/*
+This is a block comment
+*/</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_flow_control"><a class="anchor" href="#_flow_control"></a>flow control</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>no <code>while</code> loop, use <code>for</code></p>
+</li>
+<li>
+<p>no break for <code>switch</code></p>
+</li>
+<li>
+<p>no <code>elif</code>, only <code>if &#8230;&#8203; else</code></p>
+</li>
+<li>
+<p>no <code>(</code> for condition</p>
+</li>
+<li>
+<p><code>select</code> similar to switch, but only used for channel communication. <code>select</code> will randomly choose one (only ONE) <code>case</code>, and block if no executable <code>case</code> until there is one.</p>
+</li>
+<li>
+<p><code>goto</code> jump to another label</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_function"><a class="anchor" href="#_function"></a>Function</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In go, function is first-class citizen, an be passed as value, no matter regular function <code>func abc()</code> or method <code>func (x X) xxx()</code>, or a closure <code>func() {return func(){&#8230;&#8203;}}</code></p>
+</div>
+<div class="sect2">
+<h3 id="_internal_representation"><a class="anchor" href="#_internal_representation"></a>Internal representation</h3>
+<div class="listingblock">
+<div class="content">
+<pre>// Func contains Type fields specific to func types.
+type Func struct {
+   Receiver *Type  // function receiver, can be nil or non-nil
+   Results  *Type   // function results
+   Params   *Type // function params
+   Nname *Node   // function name
+   // Argwid is the total width of the function receiver, params, and results.
+   // It gets calculated via a temporary TFUNCARGS type.
+   // Note that TFUNC's Width is Widthptr.
+   Argwid int64
+   Outnamed bool // can export or not</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_regular_function"><a class="anchor" href="#_regular_function"></a>regular function</h3>
+<div class="listingblock">
+<div class="title">syntax:</div>
+<div class="content">
+<pre>func methodName([inputParamList]) [outputParamList] {
+  body
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where the <code>[]</code> part is optional.</p>
+</div>
+<div class="paragraph">
+<p>In case return multiple values, use tuple</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func swap(x,y string) (string, string) {
+  return y,x
+}
+a,b=swap("a","b")</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Passing function as parameters</div>
+<div class="content">
+<pre>f := func() int {
+  return 1
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_method"><a class="anchor" href="#_method"></a>Method</h3>
+<div class="paragraph">
+<p>Method is different from Function, but it also use <code>func</code> as keyword. The syntax</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>func (attachTo) methodName([inputParamList]) [outputParamList] {
+  body
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where <code>attachto</code> can be either <code>value TargetType</code> or <code>value *TargetType</code>. The method will then be attached to the target type (<code>struct</code>). This can then turn the type to sth similar to Java class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_closure"><a class="anchor" href="#_closure"></a>Closure</h3>
+<div class="paragraph">
+<p><code>closure = func + context</code></p>
+</div>
+<div class="paragraph">
+<p>Internally, golang will create a wrapper function, and golang will capture all free variables, and transform them into parameters(either value or ref) of the wrapper function.</p>
+</div>
+<div class="paragraph">
+<p>Refer to <a href="https://hitzhangjie.github.io/jekyll/update/2018/05/19/golang-function-closure%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6.html">golang closure internal</a> for detail.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pointer"><a class="anchor" href="#_pointer"></a>Pointer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>syntax: <code>var name *var-type</code>, e.g.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>var ip *int
+var a int =1
+ip = &amp;a
+fmt.Printf("pointer: %x\n", ip)
+fmt.Printf("value: %d\n", *ip)</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_struct"><a class="anchor" href="#_struct"></a><code>struct</code></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To define a structure, use <code>type</code> and <code>struct</code> together, e.g.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>type struct_name struct {
+  member1 memberType
+  member2 memberType
+}
+
+s := struct_name(value1, value2 ...)
+
+type info struct {
+  id int
+  name string
+}
+
+var mInfo info
+mInfo.id = 1
+mInfo.name="xyz"
+
+// Or
+mInfo = Info{
+  id: 2
+  name: "abc"
+}
+
+// Or
+ptr := &amp;Info{
+  id: 2
+  name: "abc"
+}</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anonymous_struct"><a class="anchor" href="#_anonymous_struct"></a>Anonymous <code>struct</code></h3>
+<div class="paragraph">
+<p>x := struct {
+  name string
+  pass string
+}{
+  name: "x"
+  pass: "password"
+}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_package"><a class="anchor" href="#_package"></a>Package</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main entry is in package <code>main</code>. Normally the name of the package is same as the last segment of the path. e.g., import <code>math.rand</code> package, the package must start with <code>package rand</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_import_package"><a class="anchor" href="#_import_package"></a><code>import</code> package</h3>
+<div class="listingblock">
+<div class="content">
+<pre>// multiple import
+import "fmt"
+import "math"
+
+// package then import
+import (
+  "fmt"
+  "math"
+)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Only the function/variables start with upper case can be accessed after importing.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_main_and_package"><a class="anchor" href="#_main_and_package"></a><code>main</code> and package</h3>
+<div class="paragraph">
+<p>golang is different from Java:
+* Any file in Java can have <code>main</code> method, and can be executed.
+* go can only have one <code>main</code> in each go file. The main can only be treated as execute entry iff under <code>main</code> package.
+* <code>go build</code> only build exec when it find the <code>main</code> method in the <code>main</code> package</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_package_name_vs_folder_name"><a class="anchor" href="#_package_name_vs_folder_name"></a>package name vs folder name</h3>
+<div class="ulist">
+<div class="title">best practice</div>
+<ul>
+<li>
+<p>package is folder</p>
+</li>
+<li>
+<p>package name is folder name</p>
+</li>
+<li>
+<p>package path is folder path</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">otherwise</div>
+<ul>
+<li>
+<p>same folder multiple package, compile error</p>
+</li>
+<li>
+<p>folder name diff from package name, compile error, workaround is <code>import alias path</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_go_run_build_install"><a class="anchor" href="#_go_run_build_install"></a>go <code>run</code>, <code>build</code>, <code>install</code></h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>go run xxx.go // buld and run the binary, xxx.go must in main package and has main entry
+go build xxx.go // build executable and save in current folder, xxx.go must in main package and has main entry
+go install xxx.go // build executable and install to the predefined folder, normally $GOPATH/bin; and install dependecies into $GOPATH/pkg</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_shared_library"><a class="anchor" href="#_create_shared_library"></a><a href="https://blog.csdn.net/linuxandroidwince/article/details/78723441">create shared library</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Similar to C, go allow you to build a package as shared library (.so for ddl, and .a for static).
+Before compile any shared library, the standard builtin packages should be installed as shared library.
+This will allow any other shared library to link with them. To do that</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>go install -buildmode=shared -linkshared std # will install builtin packages as shared library into $GOROOT/pkg/linux_amd64_dynlink/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Given go file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>package main
+
+import "C"  // required for import C library
+import "fmt"
+
+//export Summ
+func Summ(x, y int) int {
+    return x + y
+}
+
+//export Hello
+func Hello(str string) {
+    fmt.Printf("Hello: %s\n", str)
+}
+
+func main() { // We need the main function to make possible, CGO compiler to compile the package as C shared library
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use following command to build library</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre># build exptest.go and output shared library libexptest.so
+$ go build -buildmode=c-shared -o libexptest.so exptest.go
+$ ls
+  exptest.go  libexptest.h  libexptest.so
+
+# build static library
+$ go build -buildmode=c-archive -o libexptest.so exptest.go
+jack@jack-VirtualBox:~/mygo/src/mylib$ ls
+exptest.go  libexptest.h  libexptest.a</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_typedef_in_c"><a class="anchor" href="#_typedef_in_c"></a><code>typedef</code> in c</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://blog.csdn.net/qq_36958104/article/details/89763450">typedef</a>,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>typedef int a[10]; // a is a type of array of 10 integer
+a b[10];// eqal to b is an array of 10 type a, i.e., in[10] b[10], i.e., int b[10][10];</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_organize_code"><a class="anchor" href="#_how_to_organize_code"></a>How to organize code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There doesn&#8217;t seem to be a standard way of organizing Go projects but <a href="https://golang.org/doc/code.html">How to write code</a>
+specifies a best practice for most projects.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~/$GOPATH/
+bin/
+pkg/
+src/
+  github.com/
+    username/
+      mypack/
+          foo.go
+          bar.go
+          mypack_test.go
+      mylib/
+          utillib.go
+          utillib_test.go</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By doing it this way, you can have a separate repository for <code>mylib</code> that can be used for other projects and
+can be retrieved by "go get". The <code>mypack</code> project can import the library using <code>github.com/username/mylib</code>.</p>
+</div>
+<div class="paragraph">
+<p>In summary, all golang projects in the community can be categorized under
+* Libraries (no executable binaries)
+* Single Project (contains only 1 executable binary), such as <a href="https://github.com/etcd-io/etcd">etcd</a>
+* Tooling Projects (contains multiple executable binaries), such as <a href="https://github.com/kubernetes/kubernetes">kubernetes</a>,
+  has multiple <code>main</code> function organized under a package <code>cmd</code>, the <code>cmd/</code> package manages the number of binaries (tools) that we want to build.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~/$GOPATH/
+bin/
+pkg/
+src/
+  repository_remote/
+    user_name/
+      project_name/
+        cmd/
+          binary_one/
+             main.go
+          binary_two/
+             main.go
+          binary_three/
+             main.go
+        other_pkg/</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference"><a class="anchor" href="#_reference"></a>Reference</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://blog.csdn.net/linshuhe1/article/details/73331200">Golang basics</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

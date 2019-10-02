@@ -18,6 +18,8 @@ content:
     start_path: docs
   - url: ../mesh
     branches: [master]
+  - url: ../antora_doc
+    branches: [master]
 ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable

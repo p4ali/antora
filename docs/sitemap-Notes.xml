@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://p4ali.github.io/antora/mesh/0.0.1/envoy/envoy.html</loc>
+<loc>https://p4ali.github.io/antora/Notes/0.0.1/golang_basic.html</loc>
 <lastmod>2019-10-02T14:57:30.666Z</lastmod>
 </url>
 <url>
-<loc>https://p4ali.github.io/antora/mesh/0.0.1/network.html</loc>
+<loc>https://p4ali.github.io/antora/Notes/0.0.1/tcp_socket.html</loc>
 <lastmod>2019-10-02T14:57:30.666Z</lastmod>
 </url>
 </urlset>
